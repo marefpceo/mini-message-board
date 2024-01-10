@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "startdev": "nodemon ./bin/www",
-    "serverstart": "EBUG=mini-message-board:* npm run startdev"
+    "startdev": "DEBUG=mini-message-board:* npm start",
+    "serverstart": "nodemon npm run startdev"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
