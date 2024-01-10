@@ -5,15 +5,21 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <header>
+      <h1><%= title %></h1>
+      <p>Welcome to the <%= title %></p>
+    </header>
+
+    <a href='/new' class='button-link'>Create New Message</a>
     
-    <% messages.forEach(message => { %>
-     <div class='message-div'>
-      <p><%= message.text %></p>
-      <p><%= message.user %></p>
-      <p><%= message.added %></p>
-     </div>
-    <% }) %>
+    <section>
+      <% messages.forEach(message => { %>
+       <div class='message-div'>
+        <h2><%= message.user %></h2>
+        <p><%= message.text %></p>
+        <p><%= message.added %></p>
+       </div>
+      <% }) %>
+    </section>
   </body>
 </html>
