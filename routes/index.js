@@ -1,40 +1,14 @@
-const messages = [
-  {
-    text: 'Hi there!',
-    user: 'Amando',
-    added: new Date()
-  },
-  {
-    text: 'Hello World!',
-    user: 'Charles',
-    added: new Date()
-  }
-]
-
 const express = require('express');
-
 const router = express.Router();
+const index_controller = require('../controller/indexController');
 
 /* GET home page. */
-router.get('/', (req, res, next) => {
-  res.render('index', { title: 'Mini Message Board', messages: messages });
-});
+router.get('/', index_controller.index_get);
 
 /* GET form page */
-router.get('/new', (req, res, next) => {
-  res.render('form', { title: 'New Message' });
-});
+router.get('/new', index_controller.form_get);
 
 /* POST form page*/
-router.post('/new', (req, res, next) => {
-  messages.push(
-    { 
-      text: req.body.newMessage, 
-      user: req.body.userName, 
-      added: new Date() 
-    }
-  );
-  res.redirect('/');
-});
+router.post('/new', index_controller.form_post);
 
 module.exports = router;
