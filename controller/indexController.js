@@ -1,20 +1,11 @@
 const asyncHandler = require('express-async-handler');
+const db = require('../db/queries');
 
-const messages = [
-  {
-    text: 'Hi there!',
-    user: 'Amando',
-    added: new Date()
-  },
-  {
-    text: 'Hello World!',
-    user: 'Charles',
-    added: new Date()
-  }
-];
 
 // Get messages to display on homepage
 exports.index_get = asyncHandler(async (req, res, next) => {
+  const messages = await db.getAllMessages();
+  console.log(messages);
   res.render('index', 
     { 
       title: 'Mini Message Board', 
