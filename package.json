@@ -6,7 +6,8 @@
     "start": "node ./bin/www",
     "startdev": "DEBUG=mini-message-board:* npm start",
     "serverstart": "nodemon npm run startdev",
-    "populatedb": "node db/populatedb.js"
+    "populatedb-local": "node db/populatedb.js",
+    "populatedb-remote": "node db/populatedb.js remote"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

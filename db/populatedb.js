@@ -1,6 +1,7 @@
 #! /usr/bin/env node
 require('dotenv').config();
 const { Client } = require('pg');
+const { argv } = require('node:process');
 
 const SQL = `
 CREATE TABLE IF NOT EXISTS messages (
@@ -19,7 +20,7 @@ VALUES
 async function main() {
   console.log('seeding...');
   const client = new Client({
-    connectionString: process.env.POSTGRESQL_URI
+    connectionString: argv[2] === "remote" ? process.env.POSTGRESQL_URI_REMOTE : process.env.POSTGRESQL_URI
   });
   await client.connect();
   await client.query(SQL);
