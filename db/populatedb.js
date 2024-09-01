@@ -12,8 +12,8 @@ CREATE TABLE IF NOT EXISTS messages (
 
 INSERT INTO messages (username, message)
 VALUES
-  ('Armando', 'Test message generated using populatedb script'),
-  ('John', 'Welcome Armando, I am John.');
+  ('Welcome User', 'Welcome to the Mini Message Board'),
+  ('Create Message', 'Select the "Create New Message" icon above to leave a message');
 `;
 
 async function main() {
