@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "startdev": "DEBUG=mini-message-board:* npm start",
-    "serverstart": "nodemon npm run startdev"
+    "serverstart": "nodemon npm run startdev",
+    "populatedb": "node db/populatedb.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
