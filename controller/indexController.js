@@ -6,7 +6,6 @@ const db = require('../db/queries');
 // Get messages to display on homepage
 exports.index_get = asyncHandler(async (req, res, next) => {
   const messages = await db.getAllMessages();
-  console.log(messages);
   res.render('index', 
     { 
       title: 'Mini Message Board', 
